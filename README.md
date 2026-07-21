@@ -105,7 +105,7 @@ Open `http://localhost:8000` in your browser.
 
 ## Topics & Keywords
 
-- Aman Vishwakarma (BeginnerAman / AV / AK)
+- BeginnerAman (Aman Vishwakarma)
 - Data Science Cheatsheet
 - Python Tricks
 - Pandas Speedups
@@ -125,7 +125,7 @@ Open `http://localhost:8000` in your browser.
 
 ## Author & Credits
 
-Created & Maintained by **Aman Vishwakarma** (**BeginnerAman** / **AV** / **AK**).
+Created & Maintained by **BeginnerAman** (**Aman Vishwakarma**).
 
 ---
 
