@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Wizard Hub | 500+ Python, NumPy, Pandas, Matplotlib & SQL Tricks Engine</title>
+  <meta name="description" content="The ultimate 500+ high-leverage data science tricks & production blueprint platform. Features Python, NumPy, Pandas, Matplotlib, SQL hidden gems, 10-Stage Data Analyst framework, 8-Stage ML Pipeline, Flashcard spaced repetition, and Hinglish explainers.">
+  <meta name="keywords" content="Data Science, Python Tricks, Pandas Cheatsheet, NumPy Speedups, Matplotlib Visualizations, SQL Window Functions, Data Analyst Roadmap, Machine Learning Pipeline, Data Cleaning, Scikit-Learn, Production Data Engineering, Data Wizard Hub">
+  <meta name="author" content="Data Wizard Hub">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://beginneraman.github.io/data-wizard-hub/">
+  <meta name="theme-color" content="#0b0f19">
+
+  <!-- Open Graph / Facebook / LinkedIn SEO -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://beginneraman.github.io/data-wizard-hub/">
+  <meta property="og:title" content="Data Wizard Hub | 500+ Data Science Tricks & Masterclass Roadmaps">
+  <meta property="og:description" content="500 high-leverage tricks for Python, NumPy, Pandas, Matplotlib & SQL. Includes 10-Stage Data Analyst Production Framework, 8-Stage Machine Learning Pipeline, and Flashcard Generator.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/BeginnerAman/data-wizard-hub/main/assets/preview-banner.png">
+
+  <!-- Twitter SEO Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://beginneraman.github.io/data-wizard-hub/">
+  <meta name="twitter:title" content="Data Wizard Hub | 500+ Data Science Tricks & Production Blueprints">
+  <meta name="twitter:description" content="Master Python, Pandas, NumPy, Matplotlib & SQL with 500 interactive tricks, flashcards, 10-stage Data Analyst framework & 8-stage ML pipeline.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/BeginnerAman/data-wizard-hub/main/assets/preview-banner.png">
+
+  <!-- Structured Data Schema.org (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Data Wizard Hub",
+    "url": "https://beginneraman.github.io/data-wizard-hub/",
+    "description": "Interactive data science cheatsheet engine with 500+ high-leverage tricks, spaced-repetition flashcards, 10-stage Data Analyst blueprint, and 8-stage Machine Learning pipeline.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Organization",
+      "name": "Data Wizard Hub Team"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0b0f19',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Prism.js Syntax Highlighting (Tomorrow Night Theme) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="bg-obsidian text-slate-100 min-h-screen flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Header Navigation -->
+  <header class="sticky top-0 z-40 bg-obsidian/85 backdrop-blur-xl border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        
+        <!-- Brand Logo & Title -->
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 via-cyan-500 to-emerald-400 p-0.5 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+            <div class="w-full h-full bg-obsidian rounded-[10px] flex items-center justify-center">
+              <i data-lucide="sparkles" class="w-5 h-5 text-emerald-400"></i>
+            </div>
+          </div>
+          <div>
+            <h1 class="text-xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-300 to-emerald-400">
+              Data Wizard Hub
+            </h1>
+            <p class="text-xs text-slate-400 font-medium">Underground Utilities, RAM Savers & AI Prompts</p>
+          </div>
+        </div>
+
+        <!-- Global Search Bar & Actions -->
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <!-- Search Input -->
+          <div class="relative flex-1 md:w-80">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+            <input type="text" id="search-input" placeholder="Search tricks, tags, code... (Ctrl+K)"
+                   aria-label="Search tricks and code"
+                   class="w-full pl-10 pr-9 py-2 rounded-xl bg-slate-900/90 border border-slate-700/80 text-xs md:text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/40 transition-all">
+            <button id="clear-search-btn" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-200" aria-label="Clear search">
+              <i data-lucide="x" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+
+          <!-- Bookmark Counter Pill -->
+          <button id="bookmark-tab-btn" aria-label="Toggle bookmarks view"
+                  class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700/80 text-xs font-semibold text-slate-300 hover:text-amber-400 hover:border-slate-600 transition-all">
+            <i data-lucide="bookmark" class="w-4 h-4 text-amber-400"></i>
+            <span class="hidden sm:inline">Bookmarks</span>
+            <span id="bookmark-count-badge" class="px-1.5 py-0.5 rounded-md bg-amber-400/20 text-amber-300 text-[10px] font-mono">0</span>
+          </button>
+
+          <!-- Theme Toggle Button -->
+          <button id="theme-toggle-btn" class="p-2 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-400 hover:text-slate-200 transition-colors" aria-label="Toggle dark and light theme">
+            <i data-lucide="moon" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Tech Stack Filter Pills (Pure Lucide SVG Icons) -->
+      <nav class="mt-3.5 pt-3 border-t border-slate-800/60 flex items-center justify-between gap-2 overflow-x-auto pb-1 no-scrollbar" aria-label="Tech stack filters">
+        <div class="flex items-center gap-2">
+          <button class="module-pill inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs md:text-sm font-semibold bg-indigo-600 text-white shadow-lg shadow-indigo-500/25 border border-indigo-400/50 transition-all cursor-pointer" data-module="all">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>All Stack</span>
+          </button>
+          <button class="module-pill inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs md:text-sm font-medium bg-slate-900/90 hover:bg-slate-800 text-slate-300 border border-slate-700/60 transition-all cursor-pointer" data-module="python">
+            <i data-lucide="code-2" class="w-3.5 h-3.5 text-yellow-400"></i>
+            <span>Python</span>
+          </button>
+          <button class="module-pill inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs md:text-sm font-medium bg-slate-900/90 hover:bg-slate-800 text-slate-300 border border-slate-700/60 transition-all cursor-pointer" data-module="numpy">
+            <i data-lucide="binary" class="w-3.5 h-3.5 text-blue-400"></i>
+            <span>NumPy</span>
+          </button>
+          <button class="module-pill inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs md:text-sm font-medium bg-slate-900/90 hover:bg-slate-800 text-slate-300 border border-slate-700/60 transition-all cursor-pointer" data-module="pandas">
+            <i data-lucide="table-properties" class="w-3.5 h-3.5 text-cyan-400"></i>
+            <span>Pandas</span>
+          </button>
+          <button class="module-pill inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs md:text-sm font-medium bg-slate-900/90 hover:bg-slate-800 text-slate-300 border border-slate-700/60 transition-all cursor-pointer" data-module="matplotlib">
+            <i data-lucide="bar-chart-3" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span>Matplotlib</span>
+          </button>
+          <button class="module-pill inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs md:text-sm font-medium bg-slate-900/90 hover:bg-slate-800 text-slate-300 border border-slate-700/60 transition-all cursor-pointer" data-module="sql">
+            <i data-lucide="database" class="w-3.5 h-3.5 text-purple-400"></i>
+            <span>SQL</span>
+          </button>
+        </div>
+
+        <span id="tricks-counter-text" class="text-xs font-mono text-slate-400 whitespace-nowrap hidden lg:inline">
+          Loading tricks...
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- View Switcher Tabs -->
+  <div class="flex items-center justify-center border border-slate-800 bg-slate-900/60 p-1 rounded-2xl max-w-md mx-auto mb-8 shadow-inner">
+    <button id="btn-tab-browser" class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs md:text-sm font-semibold bg-indigo-600 text-white shadow-lg transition-all cursor-pointer">
+      <i data-lucide="layout-grid" class="w-4 h-4"></i>
+      <span>All Tricks</span>
+    </button>
+    <button id="btn-tab-flashcard" class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs md:text-sm font-medium text-slate-400 hover:text-slate-200 transition-all cursor-pointer">
+      <i data-lucide="dices" class="w-4 h-4"></i>
+      <span>Flashcard</span>
+    </button>
+    <button id="btn-tab-roadmaps" class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs md:text-sm font-medium text-slate-400 hover:text-slate-200 transition-all cursor-pointer">
+      <i data-lucide="map" class="w-4 h-4"></i>
+      <span>Roadmaps</span>
+    </button>
+  </div>
+
+  <!-- 1. Browser View (All Tricks) -->
+  <div id="browser-view" class="block">
+    <div id="tricks-grid" class="grid grid-cols-1 gap-6">
+      <!-- Dynamic Item Cards Rendered by renderEngine.js -->
+    </div>
+  </div>
+
+  <!-- 2. Flashcard View (Random Spaced Repetition Card) -->
+  <div id="flashcard-view" class="hidden max-w-4xl mx-auto space-y-6">
+    <div class="text-center space-y-2 mb-4">
+      <h2 class="text-2xl font-extrabold tracking-tight text-white flex items-center justify-center gap-2">
+        <i data-lucide="sparkles" class="w-6 h-6 text-amber-400"></i>
+        Spaced Repetition Flashcard
+      </h2>
+      <p class="text-sm text-slate-400 max-w-md mx-auto">
+        Explore the 500 tricks database one-by-one at random to discover hidden coding shortcuts!
+      </p>
+    </div>
+    <div id="flashcard-card-container"></div>
+    <div class="flex justify-center pt-4">
+      <button id="btn-next-flashcard" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 text-white shadow-xl shadow-indigo-500/20 hover:shadow-indigo-500/35 active:scale-95 transition-all cursor-pointer">
+        <i data-lucide="dices" class="w-5 h-5 animate-spin-slow"></i>
+        <span>Roll Another Trick!</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 3. Roadmaps View (Professional Data Analyst & Data Scientist Pipelines) -->
+  <div id="roadmaps-view" class="hidden max-w-5xl mx-auto space-y-8">
+    <div class="text-center space-y-2 mb-6">
+      <h2 class="text-3xl font-black tracking-tight text-white">
+        Professional Workflow Blueprints
+      </h2>
+      <p class="text-sm md:text-base text-slate-400 max-w-xl mx-auto">
+        Step-by-step roadmaps followed by industry experts, showing the exact complete code blocks copy-pasteable into any real-world project.
+      </p>
+    </div>
+
+    <!-- Blueprint Switcher Sub-tabs -->
+    <div class="flex items-center justify-center border border-slate-800 bg-slate-900/40 p-1.5 rounded-2xl max-w-xs mx-auto mb-6">
+      <button id="btn-sub-analyst" class="flex-1 py-1.5 px-3 rounded-lg text-xs font-semibold bg-slate-800 text-slate-200 border border-slate-700/50 shadow transition-all cursor-pointer">
+        Data Analyst
+      </button>
+      <button id="btn-sub-scientist" class="flex-1 py-1.5 px-3 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all cursor-pointer">
+        Data Scientist
+      </button>
+    </div>
+
+    <div id="roadmap-analyst-container" class="block space-y-8">
+      
+      <!-- Sleek Header Title -->
+      <div class="text-center space-y-2 mb-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+          <i data-lucide="award" class="w-4 h-4"></i> Data Analyst Industry Masterclass Blueprint
+        </div>
+        <h3 class="text-2xl font-black text-white tracking-tight">10-Stage Real-World Production Framework</h3>
+        <p class="text-xs md:text-sm text-slate-400 max-w-2xl mx-auto">
+          The step-by-step technical standard used by Senior Data Analysts in Fortune 500 tech, consulting & fintech companies—from setup and join validation to RFM customer scoring, SQL windowing, and multi-sheet Excel reporting.
+        </p>
+      </div>
+
+      <!-- Stage 1: Environment Setup & Display Configuration -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-slate-500 to-indigo-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-slate-500/10 border border-slate-500/30 flex items-center justify-center text-slate-300 font-bold text-lg shadow-inner">
+              1
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 1: Environment Setup & Display Configuration</h3>
+              <p class="text-xs text-slate-400">Pandas Column Display Limits, Decimal Float Format & Warning Suppression</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-indigo-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="sliders" class="w-3.5 h-3.5"></i> 1.1 Un-Truncated Column Display
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-indigo-400">Kab & Kyun?</strong> Jab dataset me 50+ columns hon to Pandas defaults inspect karte waqt `...` se columns hide kar deta hai. `display.max_columns = None` karne se terminal aur notebook me saare columns visible rehte hain.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-cyan-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="dollar-sign" class="w-3.5 h-3.5"></i> 1.2 Clean 2-Decimal Float Precision
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-cyan-400">Kab & Kyun?</strong> Financial revenue numbers (`$1,250,450.50`) standard pandas me confusing scientific notation (`1.250450e+06`) jaisey print hote hain. `display.float_format` se exact 2-decimal money format fix ho jata hai.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-blue-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="bell-off" class="w-3.5 h-3.5"></i> 1.3 Warning Suppression
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-blue-400">Kab & Kyun?</strong> Library updates se terminal me ugly `SettingWithCopyWarning` print hone lagte hain. `warnings.filterwarnings('ignore')` production scripts ko clean aur readable rakhta hai.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-indigo-400"></i> 01_environment_setup.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-analyst-stage1">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-analyst-stage1" class="language-python">import pandas as pd
+import warnings
+warnings.filterwarnings('ignore')
+
+# 1.1 Configure Pandas Display Options (No Hidden Columns/Rows)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', 100)
+pd.set_option('display.width', 1000)
+
+# 1.2 Format Floating Point Numbers to Clean Currency (2 Decimals)
+pd.set_option('display.float_format', lambda x: '%.2f' % x)
+
+print("Stage 1 Complete: Production environment & display options configured!")</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 2: Multi-Source Data Ingestion -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 font-bold text-lg shadow-inner">
+              2
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 2: Multi-Source Data Ingestion</h3>
+              <p class="text-xs text-slate-400">CSV Encodings, Multi-Tab Excel Spreadsheets, SQL Warehouses, REST APIs & Parquet</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-indigo-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="file-text" class="w-3.5 h-3.5"></i> 2.1 Encodings & Custom Separators
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-indigo-400">Kab & Kyun?</strong> European/Legacy CSV files me Special Characters (`utf-8` failure) ya tab (`\t`) / pipe (`|`) delimiters hote hain. `encoding='latin1'` aur `sep='|'` crash-proof ingestion guarantee karte hain.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-cyan-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="sheet" class="w-3.5 h-3.5"></i> 2.2 Multi-Sheet Excel Spreadsheets
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-cyan-400">Kab & Kyun?</strong> Large Excel files me Q1, Q2, Q3 tabs hote hain. `pd.ExcelFile` use karne se workbook disk par 1 baar parse hoti hai aur `sheet_name=None` saare tabs ko dictionary me load kar deta hai.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-blue-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="database" class="w-3.5 h-3.5"></i> 2.3 SQL Database Server Ingestion
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-blue-400">Kab & Kyun?</strong> Production data Postgres/MySQL/SQLite me store hota hai. SQL query filters application layer par execute hoti hain jisse RAM me sirf filtered data load hota hai.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-sky-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="binary" class="w-3.5 h-3.5"></i> 2.4 REST JSON APIs & Compressed Parquet
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-sky-400">Kab & Kyun?</strong> Web services JSON payloads aur AWS S3 Lake Parquet files provide karti hain. `pd.read_parquet()` 10x kam memory leti hai.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-indigo-400"></i> 02_data_ingestion.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-analyst-stage2">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-analyst-stage2" class="language-python">import sqlite3
+
+# 2.1 CSV with Custom Encoding & Delimiters
+df_csv = pd.read_csv('sales_data.csv', encoding='latin1', sep=',')
+
+# 2.2 Multi-Sheet Excel Workbook
+excel_file = pd.ExcelFile('annual_report_2025.xlsx')
+all_sheets_dict = pd.read_excel(excel_file, sheet_name=None) # Loads all tabs into dict
+
+# 2.3 SQL Relational Database Connections
+conn = sqlite3.connect('company_warehouse.db')
+df_orders = pd.read_sql_query("SELECT * FROM orders WHERE status = 'COMPLETED'", conn)
+df_users = pd.read_sql_query("SELECT user_id, country, signup_date FROM users", conn)
+conn.close()
+
+# 2.4 Compressed Parquet Binary Data File
+df_parquet = pd.read_parquet('big_transactions.parquet')</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 3: Relational Data Merging & Join Validation -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-lg shadow-inner">
+              3
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 3: Relational Data Merging & Join Validation</h3>
+              <p class="text-xs text-slate-400">SQL-Style Joins, Join Integrity Cardinality Checks & Unmatched Key Audits</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-blue-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="git-merge" class="w-3.5 h-3.5"></i> 3.1 Relational Left Joins
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-blue-400">Kab & Kyun?</strong> Orders table ko Users lookup table se `user_id` par join karna standard analytics flow hai. `how='left'` base transaction count preserve rakhta hai.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-cyan-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i> 3.2 Join Cardinality Validation
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-cyan-400">Kab & Kyun?</strong> Real-world bug: Subah target lookup table me duplicate `user_id` hone par `merge` rows duplicate kar deta hai! `validate='many_to_one'` use karne se duplicates aate hi pandas Error raise kar deta hai.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-teal-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="tag" class="w-3.5 h-3.5"></i> 3.3 Merge Indicator Tracking
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-teal-400">Kab & Kyun?</strong> `indicator=True` dataset me `_merge` column attach kar deta hai (`both` vs `left_only`), jisse missing customer profiles immediately identify ho jate hain.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-blue-400"></i> 03_relational_merging.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-analyst-stage3">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-analyst-stage3" class="language-python"># 3.1 & 3.2 Safe Relational Left Join with Cardinality Assertion
+df = pd.merge(
+    df_orders, 
+    df_users, 
+    on='user_id', 
+    how='left', 
+    validate='many_to_one', # Prevents row duplication from bad lookup tables
+    indicator=True
+)
+
+# 3.3 Audit Unmatched Left-Only Records
+unmatched_orders = (df['_merge'] == 'left_only').sum()
+print(f"Join Audit: {unmatched_orders} orders have missing user lookup details.")
+df = df.drop(columns=['_merge'])</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 4: Health Audit & Quality Assertions -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 to-teal-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold text-lg shadow-inner">
+              4
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 4: Health Audit & Quality Assertions</h3>
+              <p class="text-xs text-slate-400">Dimensions, Null Percentages, Duplicate Keys & Quality Asserts</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-cyan-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="eye" class="w-3.5 h-3.5"></i> 4.1 Schema Scan
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Inspect dimensions (`df.shape`) and check if numbers are wrapped as strings (`df.info()`).
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-teal-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i> 4.2 Missing % Distribution
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Calculate missing value ratios (`(df.isna().mean() * 100).round(2)`).
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-emerald-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="check-square" class="w-3.5 h-3.5"></i> 4.3 Data Quality Assertions
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Use `assert (df['revenue'] >= 0).all()` to throw instant alerts if corrupted records enter the pipeline.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-cyan-400"></i> 04_health_audit.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-analyst-stage4">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-analyst-stage4" class="language-python"># 4.1 & 4.2 Missing Value & Datatype Audit Table
+missing_table = pd.DataFrame({
+    'Null_Count': df.isna().sum(),
+    'Null_%': (df.isna().mean() * 100).round(2),
+    'Data_Type': df.dtypes
+}).sort_values(by='Null_%', ascending=False)
+
+print("Data Health Audit Summary:\n", missing_table[missing_table['Null_Count'] > 0])
+
+# 4.3 Production Quality Assertions
+if 'revenue' in df.columns:
+    assert (df['revenue'].dropna() >= 0).all(), "Data Pipeline Exception: Negative revenue values detected!"</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 5: Data Hygiene & Sanitization -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-green-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-lg shadow-inner">
+              5
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 5: Data Hygiene & Sanitization</h3>
+              <p class="text-xs text-slate-400">Header Snake_case, Currency Symbols, Text Mapping & Memory Downcasting</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-emerald-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="wand-2" class="w-3.5 h-3.5"></i> 5.1 Snake_case Standard
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Convert raw messy headers (`Customer Revenue ($)`) to clean `customer_revenue`.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-teal-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="dollar-sign" class="w-3.5 h-3.5"></i> 5.2 Currency Symbol Removal
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Strip `$`, `,`, `%` characters from numeric text columns and cast with `pd.to_numeric()`.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-green-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="calendar" class="w-3.5 h-3.5"></i> 5.3 Datetime Conversion
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Parse mixed timestamp strings using `pd.to_datetime(..., format='mixed')`.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-emerald-400"></i> 05_data_hygiene.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-analyst-stage5">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-analyst-stage5" class="language-python"># 5.1 Standardize Column Headers to Lowercase Snake_case
+df.columns = (df.columns.str.strip().str.lower()
+              .str.replace(' ', '_')
+              .str.replace('[^a-z0-9_]', '', regex=True))
+
+# 5.2 Currency & Special Symbol Removal
+for col in ['revenue', 'price', 'amount', 'salary']:
+    if col in df.columns:
+        df[col] = (df[col].astype(str)
+                   .str.replace('$', '', regex=False)
+                   .str.replace(',', '', regex=False)
+                   .str.replace('%', '', regex=False).str.strip())
+        df[col] = pd.to_numeric(df[col], errors='coerce')
+
+# 5.3 Datetime Parsing
+if 'order_date' in df.columns:
+    df['order_date'] = pd.to_datetime(df['order_date'], errors='coerce', format='mixed')</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 6: Outlier Capping & Missing Imputation -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold text-lg shadow-inner">
+              6
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 6: Outlier Capping & Missing Data Strategy</h3>
+              <p class="text-xs text-slate-400">IQR Outlier Winsorization, Threshold Dropping & Median Imputation</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-amber-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="scissors" class="w-3.5 h-3.5"></i> 6.1 IQR Outlier Winsorization Capping
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-amber-400">Kab & Kyun?</strong> Outliers ko completely delete karne se real data drop ho jata hai. IQR Bounds ($Q_1 - 1.5\text{IQR}, Q_3 + 1.5\text{IQR}$) calculate karke `.clip()` karne se extreme values smooth ho jati hain.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-yellow-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> 6.2 Median Imputation
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Fill missing numerical gaps with `median()` instead of mean to keep estimations unbiased.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-amber-400"></i> 06_outliers_imputation.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-analyst-stage6">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-analyst-stage6" class="language-python"># 6.1 IQR Outlier Capping (Winsorization)
+if 'revenue' in df.columns:
+    Q1 = df['revenue'].quantile(0.25)
+    Q3 = df['revenue'].quantile(0.75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    df['revenue'] = df['revenue'].clip(lower=lower_bound, upper=upper_bound)
+
+# 6.2 Threshold Column Dropping & Median Fill
+df = df.dropna(thresh=int(len(df) * 0.50), axis=1)
+num_cols = df.select_dtypes(include=['int32', 'int64', 'float64']).columns
+for col in num_cols:
+    if df[col].isna().sum() > 0:
+        df[col] = df[col].fillna(df[col].median())</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 7: Advanced Feature Engineering & RFM Segmentation -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 font-bold text-lg shadow-inner">
+              7
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 7: Advanced Feature Engineering & RFM Segmentation</h3>
+              <p class="text-xs text-slate-400">Datetime Signals, Multi-Condition Rule Engines & RFM Customer Scoring</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-purple-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="calendar" class="w-3.5 h-3.5"></i> 7.1 Datetime Signal Extraction
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Extract Year, Month Name, Day of Week, Quarter and `is_weekend` (0/1) flag.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-pink-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="users" class="w-3.5 h-3.5"></i> 7.2 RFM Customer Segmentation
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Calculate Recency, Frequency, Monetary (RFM) scores to segment High-Value/At-Risk customers.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-purple-400"></i> 07_feature_engineering_rfm.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-analyst-stage7">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-analyst-stage7" class="language-python"># 7.1 Datetime Signals Extraction
+if 'order_date' in df.columns:
+    df['year'] = df['order_date'].dt.year
+    df['month_name'] = df['order_date'].dt.month_name()
+    df['is_weekend'] = df['order_date'].dt.dayofweek.isin([5, 6]).astype(int)
+
+# 7.2 RFM Customer Segmentation (Recency, Frequency, Monetary)
+if 'user_id' in df.columns and 'order_date' in df.columns and 'revenue' in df.columns:
+    snapshot_date = df['order_date'].max() + pd.Timedelta(days=1)
+    rfm = df.groupby('user_id').agg(
+        recency=('order_date', lambda x: (snapshot_date - x.max()).days),
+        frequency=('order_date', 'count'),
+        monetary=('revenue', 'sum')
+    ).reset_index()
+
+    rfm['r_score'] = pd.qcut(rfm['recency'], q=4, labels=[4, 3, 2, 1])
+    rfm['m_score'] = pd.qcut(rfm['monetary'], q=4, labels=[1, 2, 3, 4])
+    print("RFM Customer Segmentation Summary:\n", rfm.head())</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 8: Pandas SQL Window Functions -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-lg shadow-inner">
+              8
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 8: Pandas SQL Window Functions Equivalent</h3>
+              <p class="text-xs text-slate-400">Lead/Lag Offsets (`shift()`), Partition Ranks (`rank()`) & Moving Averages</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-blue-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="arrow-right-left" class="w-3.5 h-3.5"></i> 8.1 Lead & Lag Offsets
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Calculate order-over-order differences using `shift(1)` to simulate SQL `LAG()`.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-indigo-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="trophy" class="w-3.5 h-3.5"></i> 8.2 Rank Over Partition
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Group-specific ranking using `rank(ascending=False)` to find regional leaders.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-blue-400"></i> 08_window_functions.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-analyst-stage8">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-analyst-stage8" class="language-python"># 8.1 SQL LAG() Equivalent
+if 'user_id' in df.columns and 'revenue' in df.columns:
+    df = df.sort_values(by=['user_id', 'order_date'])
+    df['prev_order_revenue'] = df.groupby('user_id')['revenue'].shift(1)
+    df['rev_change'] = df['revenue'] - df['prev_order_revenue']
+
+# 8.2 SQL RANK() OVER (PARTITION BY region ORDER BY revenue DESC)
+if 'region' in df.columns and 'revenue' in df.columns:
+    df['region_rank'] = df.groupby('region')['revenue'].rank(ascending=False, method='min')
+
+# 8.3 Running Total & Moving Averages
+df['running_revenue'] = df.groupby('user_id')['revenue'].cumsum()
+df['7d_moving_avg'] = df['revenue'].rolling(window=7, min_periods=1).mean()</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 9: EDA & Cohort/Pivot Analytics -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 to-rose-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400 font-bold text-lg shadow-inner">
+              9
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 9: EDA, Pivoting & Cohort Retention Analytics</h3>
+              <p class="text-xs text-slate-400">Executive Aggregations, 2D Pivot Matrices & Monthly Cohort Matrices</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-pink-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="pie-chart" class="w-3.5 h-3.5"></i> 9.1 Multi-Metric Groupby
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Calculate revenue metrics, user counts and order frequencies in a single pass.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-rose-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="grid" class="w-3.5 h-3.5"></i> 9.2 Excel-Style 2D Pivot Matrix
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Build summary matrices with grand totals (`margins=True`) for stakeholder reporting.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-pink-400"></i> 09_eda_pivots.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-analyst-stage9">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-analyst-stage9" class="language-python"># 9.1 Executive Multi-Metric Groupby Summary
+executive_summary = df.groupby('region').agg(
+    total_revenue=('revenue', 'sum'),
+    average_order_val=('revenue', 'mean'),
+    median_order_val=('revenue', 'median'),
+    unique_customers=('user_id', 'nunique'),
+    total_orders=('revenue', 'count')
+).reset_index().sort_values(by='total_revenue', ascending=False)
+
+# 9.2 2D Pivot Matrix with Margins
+pivot_matrix = pd.pivot_table(
+    df,
+    values='revenue',
+    index='region',
+    columns='spend_tier',
+    aggfunc='sum',
+    fill_value=0,
+    margins=True
+)</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 10: Multi-Tab Excel & Production Output -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-500 to-emerald-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 font-bold text-lg shadow-inner">
+              10
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 10: Multi-Sheet Excel Workbooks & Database Writes</h3>
+              <p class="text-xs text-slate-400">Multi-Tab Excel Spreadsheets (`ExcelWriter`), Clipboard Copy & SQL Upload</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-emerald-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="file-spreadsheet" class="w-3.5 h-3.5"></i> 10.1 Multi-Tab Excel Workbook
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Write analytical outputs into organized tabs of a single `.xlsx` workbook using `pd.ExcelWriter()`.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-teal-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="clipboard" class="w-3.5 h-3.5"></i> 10.2 Instant Clipboard Copy
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Copy summary tables directly to system clipboard using `to_clipboard(excel=True)` for quick Excel/Slack pasting.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-teal-400"></i> 10_production_exports.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-analyst-stage10">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-analyst-stage10" class="language-python"># 10.1 Multi-Tab Excel Report Generation
+with pd.ExcelWriter('Executive_Analytics_Report_2025.xlsx', engine='openpyxl') as writer:
+    executive_summary.to_excel(writer, sheet_name='Executive_Summary', index=False)
+    pivot_matrix.to_excel(writer, sheet_name='Regional_Pivots')
+    df.to_excel(writer, sheet_name='Clean_Master_Data', index=False)
+
+print("Multi-tab Excel workbook successfully generated!")
+
+# 10.2 Instant Clipboard Copy (Excel Ready)
+executive_summary.to_clipboard(excel=True, index=False)
+print("Summary copied to clipboard! Press Ctrl+V in Excel.")
+
+# 10.3 SQL Database Table Write-Back
+conn = sqlite3.connect('company_warehouse.db')
+df.to_sql('clean_analytics_table', conn, if_exists='replace', index=False)
+conn.close()
+
+# 10.4 Compressed Parquet Format Export
+df.to_parquet('clean_analytics_table.parquet', index=False)
+print("Full 10-Stage Data Analyst Masterclass Pipeline Execution Complete!")</code></pre>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 3b. Data Scientist Masterclass Roadmap Container -->
+    <div id="roadmap-scientist-container" class="hidden space-y-8">
+      
+      <!-- Sleek Header Title -->
+      <div class="text-center space-y-2 mb-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-semibold">
+          <i data-lucide="cpu" class="w-4 h-4"></i> Data Scientist ML Engineering Masterclass
+        </div>
+        <h3 class="text-2xl font-black text-white tracking-tight">8-Stage Real-World Machine Learning Pipeline</h3>
+        <p class="text-xs md:text-sm text-slate-400 max-w-2xl mx-auto">
+          The production machine learning standard—from feature matrix isolation and leakage-safe ColumnTransformers to stratified CV, GridSearchCV tuning, and Joblib binary serialization for cloud APIs.
+        </p>
+      </div>
+
+      <!-- Stage 1: Feature Matrix (X) & Target Vector (y) Separation -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 font-bold text-lg shadow-inner">
+              1
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 1: Feature Matrix (X) & Target Vector (y) Isolation</h3>
+              <p class="text-xs text-slate-400">Isolating Predictor Features from Labels & Diagnostic Class Imbalance Checks</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-indigo-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="scissors" class="w-3.5 h-3.5"></i> 1.1 Feature & Target Separation
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-indigo-400">Kab & Kyun?</strong> Supervised ML models target variable ($y$) ko predict karne ke liye historical features ($X$) learn karte hain. Primary Keys (`user_id`, `transaction_id`) aur target column ko drop karna zaroori hai.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-cyan-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="scale" class="w-3.5 h-3.5"></i> 1.2 Class Imbalance Diagnostics
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-cyan-400">Kab & Kyun?</strong> `y.value_counts(normalize=True)` check karke identify karein ki target skewed to nahi hai (e.g., 90% Non-Churn vs 10% Churn).
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-indigo-400"></i> 01_feature_target_setup.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-scientist-stage1">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-scientist-stage1" class="language-python">import pandas as pd
+
+# Load clean preprocessed analytics dataset
+df = pd.read_csv('cleaned_master_dataset.csv')
+
+# Define Target Variable
+target_col = 'churn' # 1 = Churned, 0 = Retained
+
+# 1.1 Separate Feature Matrix (X) and Target Vector (y)
+X = df.drop(columns=[target_col, 'user_id', 'transaction_id'], errors='ignore')
+y = df[target_col]
+
+# 1.2 Target Class Ratio Diagnostic
+print(f"Feature Matrix Shape X: {X.shape}")
+print(f"Target Imbalance Distribution:\n{y.value_counts(normalize=True).round(3)}")</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 2: Sklearn ColumnTransformer & Preprocessing -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold text-lg shadow-inner">
+              2
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 2: Sklearn ColumnTransformer & Feature Preprocessing</h3>
+              <p class="text-xs text-slate-400">StandardScaler for Numeric & OneHotEncoder with handle_unknown='ignore'</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-cyan-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="gauge" class="w-3.5 h-3.5"></i> 2.1 Numeric StandardScaler ($\mu=0, \sigma=1$)
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-cyan-400">Kab & Kyun?</strong> Logistic Regression aur Neural Nets scale sensitive hote hain. `StandardScaler` mean 0 aur standard deviation 1 par normalize kar deta hai.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-blue-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="binary" class="w-3.5 h-3.5"></i> 2.2 Crash-Proof OneHotEncoder
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-blue-400">Kab & Kyun?</strong> `OneHotEncoder(handle_unknown='ignore')` use karne se production API me koi naya text category aane par code crash nahi hota.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-cyan-400"></i> 02_preprocessing_transformers.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-scientist-stage2">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-scientist-stage2" class="language-python">from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+
+# Detect Numeric vs Categorical Columns
+num_cols = X.select_dtypes(include=['int32', 'int64', 'float64']).columns.tolist()
+cat_cols = X.select_dtypes(include=['object', 'category']).columns.tolist()
+
+# Declarative ColumnTransformer Preprocessor
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('num', StandardScaler(), num_cols),
+        ('cat', OneHotEncoder(handle_unknown='ignore', drop='first'), cat_cols)
+    ]
+)
+print("ColumnTransformer successfully constructed!")</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 3: Data Leakage Safe Pipeline Construction -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-lg shadow-inner">
+              3
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 3: Data Leakage Safe Pipeline Construction</h3>
+              <p class="text-xs text-slate-400">Bundling Preprocessor + Estimator into a Unified Pipeline</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-emerald-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> 3.1 Data Leakage Hazard Protection
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-emerald-400">Kab & Kyun?</strong> Split se pehle scaling karne par test dataset ka mean train me leak ho jata hai (Data Leakage!). `Pipeline` guarantee karta hai ki scaling har fold ke andar strictly train set par execute hogi.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-teal-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="box" class="w-3.5 h-3.5"></i> 3.2 Unified Model Container
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Bundle preprocessor and RandomForest algorithm into a single reproducible object.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-emerald-400"></i> 03_pipeline_bundling.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-scientist-stage3">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-scientist-stage3" class="language-python">from sklearn.pipeline import Pipeline
+from sklearn.ensemble import RandomForestClassifier
+
+# Create Data-Leakage Safe Machine Learning Pipeline
+model_pipeline = Pipeline(steps=[
+    ('preprocessor', preprocessor),
+    ('classifier', RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42, n_jobs=-1))
+])
+print("Unified ML Pipeline instantiated successfully!")</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 4: Stratified Train/Test Dataset Splitting -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold text-lg shadow-inner">
+              4
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 4: Stratified Train / Test Partitioning</h3>
+              <p class="text-xs text-slate-400">80% Train vs 20% Unseen Test Set with Stratified Class Preservation</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-amber-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="pie-chart" class="w-3.5 h-3.5"></i> 4.1 Stratified Split Preservation
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-amber-400">Kab & Kyun?</strong> Imbalanced data me random split se test set me 0 positive labels ho sakte hain! `stratify=y` flag train aur test me exact target ratio maintain rakhta hai.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-yellow-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="lock" class="w-3.5 h-3.5"></i> 4.2 Reproducible Random State
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              `random_state=42` ensures identical peer-verifiable results across every run.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-amber-400"></i> 04_stratified_split.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-scientist-stage4">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-scientist-stage4" class="language-python">from sklearn.model_selection import train_test_split
+
+# 80% Train, 20% Unseen Test Split with Target Stratification
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, 
+    test_size=0.20, 
+    random_state=42, 
+    stratify=y
+)
+
+print(f"X_train samples: {X_train.shape[0]} | X_test samples: {X_test.shape[0]}")</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 5: Model Fitting & Cross-Validation Strategy -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 font-bold text-lg shadow-inner">
+              5
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 5: Pipeline Fitting & 5-Fold Cross-Validation</h3>
+              <p class="text-xs text-slate-400">Executing Fit Operations and Evaluating 5-Fold Stratified CV Scores</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-purple-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="play" class="w-3.5 h-3.5"></i> 5.1 Fit Preprocessor + Estimator
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Single `model_pipeline.fit(X_train, y_train)` fits scaling parameters and decision trees simultaneously.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-pink-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="repeat" class="w-3.5 h-3.5"></i> 5.2 5-Fold Stratified CV
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-pink-400">Kab & Kyun?</strong> Single test split score lucky/unlucky ho sakta hai. `cross_val_score(..., cv=5)` model stability calculate karta hai.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-purple-400"></i> 05_model_fitting_cv.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-scientist-stage5">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-scientist-stage5" class="language-python">from sklearn.model_selection import cross_val_score
+
+# 5.1 Fit Pipeline on Training Set
+model_pipeline.fit(X_train, y_train)
+
+# 5.2 Evaluate 5-Fold Stratified Cross-Validation ROC-AUC Scores
+cv_scores = cross_val_score(model_pipeline, X_train, y_train, cv=5, scoring='roc_auc', n_jobs=-1)
+print(f"5-Fold CV ROC-AUC Scores: {cv_scores.round(3)}")
+print(f"Mean CV ROC-AUC: {cv_scores.mean():.4f} +/- {cv_scores.std():.4f}")</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 6: Hyperparameter Tuning (GridSearchCV) -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 to-rose-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400 font-bold text-lg shadow-inner">
+              6
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 6: Automated Hyperparameter Tuning (GridSearchCV)</h3>
+              <p class="text-xs text-slate-400">Systematic Search for Optimal Tree Depths & Estimators via ROC-AUC</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-pink-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="sliders" class="w-3.5 h-3.5"></i> 6.1 Param Grid Specification
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Search parameter dictionary (e.g., `classifier__n_estimators`, `classifier__max_depth`).
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-rose-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="trophy" class="w-3.5 h-3.5"></i> 6.2 Best Model Extraction
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Extract `grid_search.best_estimator_` fitted with the winning hyperparameter setup.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-pink-400"></i> 06_hyperparameter_tuning.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-scientist-stage6">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-scientist-stage6" class="language-python">from sklearn.model_selection import GridSearchCV
+
+# Hyperparameter Search Space
+param_grid = {
+    'classifier__n_estimators': [50, 100, 200],
+    'classifier__max_depth': [5, 10, 15, None],
+    'classifier__min_samples_split': [2, 5]
+}
+
+grid_search = GridSearchCV(
+    estimator=model_pipeline,
+    param_grid=param_grid,
+    cv=5,
+    scoring='roc_auc',
+    n_jobs=-1
+)
+
+grid_search.fit(X_train, y_train)
+best_model = grid_search.best_estimator_
+
+print("Winning Hyperparameters:", grid_search.best_params_)
+print(f"Best 5-Fold Cross-Validation ROC-AUC: {grid_search.best_score_:.4f}")</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 7: Model Evaluation & Metrics -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-500 to-cyan-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 font-bold text-lg shadow-inner">
+              7
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 7: Model Diagnostic Metrics & ROC-AUC Evaluation</h3>
+              <p class="text-xs text-slate-400">Precision, Recall, F1-Score Report & ROC-AUC Probability Scoring</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-teal-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="bar-chart-2" class="w-3.5 h-3.5"></i> 7.1 Classification Metric Breakdown
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Evaluate Precision, Recall, and F1-score on unseen test set records (`X_test`).
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-cyan-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="activity" class="w-3.5 h-3.5"></i> 7.2 ROC-AUC Score & Probabilities
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Calculate class probabilities (`predict_proba()`) for threshold calibration.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-teal-400"></i> 07_model_evaluation.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-scientist-stage7">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-scientist-stage7" class="language-python">from sklearn.metrics import classification_report, roc_auc_score, confusion_matrix
+
+# Predict Labels and Class Probabilities on Unseen Test Dataset
+y_pred = best_model.predict(X_test)
+y_proba = best_model.predict_proba(X_test)[:, 1]
+
+print("\n--- Model Diagnostic Report ---")
+print(classification_report(y_test, y_pred))
+print(f"ROC-AUC Performance Score: {roc_auc_score(y_test, y_proba):.4f}")
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))</code></pre>
+        </div>
+      </div>
+
+      <!-- Stage 8: Model Serialization & Production Deployment (joblib) -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-green-500"></div>
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-lg shadow-inner">
+              8
+            </div>
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-white">Stage 8: Production Binary Serialization & Real-Time Inference Script</h3>
+              <p class="text-xs text-slate-400">Saving Pipeline Binary (joblib) & Real-Time REST API Prediction Scoring</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-emerald-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="save" class="w-3.5 h-3.5"></i> 8.1 Joblib Pipeline Export
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              <strong class="text-emerald-400">Kab & Kyun?</strong> `joblib.dump()` complete pipeline (preprocessor + scaler + encoder + trained model) ko single `.joblib` binary file me save karta hai.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/60 space-y-1">
+            <h4 class="font-bold text-teal-400 flex items-center gap-1.5 uppercase text-[11px]">
+              <i data-lucide="zap" class="w-3.5 h-3.5"></i> 8.2 Real-Time Inference Scoring
+            </h4>
+            <p class="text-slate-300 Hinglish leading-relaxed">
+              Load serialized pipeline via `joblib.load()` and generate predictions on incoming raw JSON payloads.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-slate-900 bg-slate-900/80">
+            <span class="text-[11px] font-mono text-slate-400 font-semibold flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-emerald-400"></i> 08_production_serialization.py
+            </span>
+            <button class="btn-copy-blueprint flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-indigo-600 text-[11px] font-bold text-slate-200 hover:text-white transition-all cursor-pointer" data-target="code-scientist-stage8">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="p-4 text-xs font-mono text-slate-300 overflow-x-auto no-scrollbar"><code id="code-scientist-stage8" class="language-python">import joblib
+import pandas as pd
+
+# 8.1 Serialize winning pipeline object to disk
+joblib.dump(best_model, 'churn_prediction_pipeline.joblib')
+print("Model pipeline saved to 'churn_prediction_pipeline.joblib'")
+
+# 8.2 Production Real-Time Inference Script
+loaded_pipeline = joblib.load('churn_prediction_pipeline.joblib')
+
+# Incoming raw JSON payload from Web Application
+new_payload = pd.DataFrame([{
+    'age': 34,
+    'revenue': 1450.00,
+    'region': 'North',
+    'spend_tier': 'Gold'
+}])
+
+# Predict churn class & probabilities
+predicted_churn = loaded_pipeline.predict(new_payload)[0]
+churn_prob = loaded_pipeline.predict_proba(new_payload)[0][1]
+
+print(f"Prediction: Churn Risk = {predicted_churn} | Probability = {churn_prob:.2%}")
+print("Full 8-Stage Data Scientist ML Pipeline Execution Complete!")</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 bg-obsidian py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p>Data Wizard Hub &copy; 2026. Built with Vanilla JS & Tailwind CSS for GitHub Pages.</p>
+      <p class="flex items-center gap-1.5">
+        <span>Crafted with Lucide Icons & Modern ES6</span>
+        <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-400"></i>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Main App Script -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

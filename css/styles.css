@@ -1,0 +1,106 @@
+/* Data Wizard Hub - High Performance Obsidian Styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #0b0f19;
+  color: #f1f5f9;
+  -webkit-overflow-scrolling: touch;
+}
+
+code, pre, .font-mono {
+  font-family: 'Fira Code', monospace;
+}
+
+/* Fast Solid Card Styling (No GPU-heavy backdrop-filter blur on repetitive cards) */
+.glass-card {
+  background-color: #0f172a; /* Slate 900 */
+  border: 1px solid rgba(51, 65, 85, 0.7); /* Slate 700 */
+  contain: content; /* CSS containment for ultra-fast browser repaint */
+}
+
+.glass-card:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Prism Syntax Highlighting Overrides */
+pre[class*="language-"] {
+  background: #080c14 !important;
+  margin: 0 !important;
+  padding: 0.875rem !important;
+  border-radius: 0.5rem !important;
+  font-size: 0.8125rem !important;
+  line-height: 1.45 !important;
+  overflow-x: auto !important;
+}
+
+code[class*="language-"] {
+  font-family: 'Fira Code', monospace !important;
+  text-shadow: none !important;
+  font-size: 0.8125rem !important;
+}
+
+/* Code Box Header Accent Lines */
+.standard-box {
+  border-color: rgba(71, 85, 105, 0.6);
+}
+
+.wizard-box {
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+/* Mobile-first code scroll fix */
+pre {
+  max-width: 100%;
+  white-space: pre;
+  word-break: normal;
+  word-wrap: normal;
+}
+
+/* Toast Slide In Animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.toast-animate {
+  animation: slideUp 0.2s ease-out forwards;
+}
+
+/* Gentle spin animation for dices */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+.btn-next-flashcard:hover .animate-spin-slow {
+  animation-duration: 2s;
+}
