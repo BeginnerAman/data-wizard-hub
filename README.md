@@ -135,4 +135,4 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
 
-Made by **Aman Vishwakarma (BeginnerAman)** | Star this repository if it helped your data workflow.
+Made by **BeginnerAman (Aman Vishwakarma)** | Star this repository if it helped your data workflow.
