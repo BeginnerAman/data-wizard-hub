@@ -241,7 +241,7 @@
       </div>
 
       <!-- Stage 1: Environment Setup & Display Configuration -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-slate-500 to-indigo-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -311,7 +311,7 @@ print("Stage 1 Complete: Production environment & display options configured!")<
       </div>
 
       <!-- Stage 2: Multi-Source Data Ingestion -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -394,7 +394,7 @@ df_parquet = pd.read_parquet('big_transactions.parquet')</code></pre>
       </div>
 
       <!-- Stage 3: Relational Data Merging & Join Validation -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -465,7 +465,7 @@ df = df.drop(columns=['_merge'])</code></pre>
       </div>
 
       <!-- Stage 4: Health Audit & Quality Assertions -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 to-teal-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -534,7 +534,7 @@ if 'revenue' in df.columns:
       </div>
 
       <!-- Stage 5: Data Hygiene & Sanitization -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-green-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -608,7 +608,7 @@ if 'order_date' in df.columns:
       </div>
 
       <!-- Stage 6: Outlier Capping & Missing Imputation -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -671,7 +671,7 @@ for col in num_cols:
       </div>
 
       <!-- Stage 7: Advanced Feature Engineering & RFM Segmentation -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -737,7 +737,7 @@ if 'user_id' in df.columns and 'order_date' in df.columns and 'revenue' in df.co
       </div>
 
       <!-- Stage 8: Pandas SQL Window Functions -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -798,7 +798,7 @@ df['7d_moving_avg'] = df['revenue'].rolling(window=7, min_periods=1).mean()</cod
       </div>
 
       <!-- Stage 9: EDA & Cohort/Pivot Analytics -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 to-rose-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -865,7 +865,7 @@ pivot_matrix = pd.pivot_table(
       </div>
 
       <!-- Stage 10: Multi-Tab Excel & Production Output -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-500 to-emerald-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -949,7 +949,7 @@ print("Full 10-Stage Data Analyst Masterclass Pipeline Execution Complete!")</co
       </div>
 
       <!-- Stage 1: Feature Matrix (X) & Target Vector (y) Separation -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -1012,7 +1012,7 @@ print(f"Target Imbalance Distribution:\n{y.value_counts(normalize=True).round(3)
       </div>
 
       <!-- Stage 2: Sklearn ColumnTransformer & Preprocessing -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -1075,7 +1075,7 @@ print("ColumnTransformer successfully constructed!")</code></pre>
       </div>
 
       <!-- Stage 3: Data Leakage Safe Pipeline Construction -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -1132,7 +1132,7 @@ print("Unified ML Pipeline instantiated successfully!")</code></pre>
       </div>
 
       <!-- Stage 4: Stratified Train/Test Dataset Splitting -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -1191,7 +1191,7 @@ print(f"X_train samples: {X_train.shape[0]} | X_test samples: {X_test.shape[0]}"
       </div>
 
       <!-- Stage 5: Model Fitting & Cross-Validation Strategy -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -1248,7 +1248,7 @@ print(f"Mean CV ROC-AUC: {cv_scores.mean():.4f} +/- {cv_scores.std():.4f}")</cod
       </div>
 
       <!-- Stage 6: Hyperparameter Tuning (GridSearchCV) -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 to-rose-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -1318,7 +1318,7 @@ print(f"Best 5-Fold Cross-Validation ROC-AUC: {grid_search.best_score_:.4f}")</c
       </div>
 
       <!-- Stage 7: Model Evaluation & Metrics -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-500 to-cyan-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
@@ -1376,7 +1376,7 @@ print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))</code></pre>
       </div>
 
       <!-- Stage 8: Model Serialization & Production Deployment (joblib) -->
-      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+      <div class="roadmap-stage-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-green-500"></div>
         <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
           <div class="flex items-center gap-3">
